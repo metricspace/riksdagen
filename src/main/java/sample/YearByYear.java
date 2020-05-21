@@ -37,17 +37,33 @@ public class YearByYear {
             try {
                 java.util.Date first = formatter.parse(year+"-01-01");
                 java.util.Date last = formatter.parse(year+"-12-31");
-                for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findBetankandeByDateLimit(first, last)) {
-                  documents.add(doc);
+                try {
+                    for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findBetankandeByDateLimit(first, last)) {
+                      documents.add(doc);
+                    }
+                } catch (java.io.IOException exception) {
+                   System.out.println("IOException processing motioner: "+exception.getMessage());
                 }
-                for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findDirektivByDateLimit(first, last)) {
-                  documents.add(doc);
+                try {
+                    for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findDirektivByDateLimit(first, last)) {
+                      documents.add(doc);
+                    }
+                } catch (java.io.IOException exception) {
+                   System.out.println("IOException processing motioner: "+exception.getMessage());
                 }
-                for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findFragaByDateLimit(first, last)) {
-                  documents.add(doc);
+                try {
+                    for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findFragaByDateLimit(first, last)) {
+                      documents.add(doc);
+                    }
+                } catch (java.io.IOException exception) {
+                   System.out.println("IOException processing motioner: "+exception.getMessage());
                 }
-                for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findInterpellationByDateLimit(first, last)) {
-                  documents.add(doc);
+                try {
+                    for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findInterpellationByDateLimit(first, last)) {
+                      documents.add(doc);
+                    }
+                } catch (java.io.IOException exception) {
+                   System.out.println("IOException processing motioner: "+exception.getMessage());
                 }
                 try {
                     for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findMotionerByDateLimit(first, last)) {
@@ -56,17 +72,27 @@ public class YearByYear {
                 } catch (java.io.IOException exception) {
                    System.out.println("IOException processing motioner: "+exception.getMessage());
                 }
-                for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findPropositionerByDateLimit(first, last)) {
-                  documents.add(doc);
+                try {
+                    for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findPropositionerByDateLimit(first, last)) {
+                      documents.add(doc);
+                    }
+                } catch (java.io.IOException exception) {
+                   System.out.println("IOException processing motioner: "+exception.getMessage());
                 }
-                for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findRirByDateLimit(first, last)) {
-                  documents.add(doc);
+                try {
+                    for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findRirByDateLimit(first, last)) {
+                      documents.add(doc);
+                    }
+                } catch (java.io.IOException exception) {
+                   System.out.println("IOException processing motioner: "+exception.getMessage());
                 }
-                for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findSoUByDateLimit(first, last)) {
-                  documents.add(doc);
+                try {
+                    for(se.metricspace.riksdagen.Document doc:se.metricspace.riksdagen.DocumentFinder.findSoUByDateLimit(first, last)) {
+                      documents.add(doc);
+                    }
+                } catch (java.io.IOException exception) {
+                   System.out.println("IOException processing motioner: "+exception.getMessage());
                 }
-            } catch(java.io.IOException exception) {
-                System.out.println("IOException processing documents: "+exception.getMessage());
             } catch(org.xml.sax.SAXException exception) {
                 System.out.println("SAXException processing documents: "+exception.getMessage());
             } catch(javax.xml.parsers.ParserConfigurationException exception) {
