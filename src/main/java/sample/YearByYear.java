@@ -104,7 +104,7 @@ public class YearByYear {
                 java.util.Collections.sort(documents);
                 System.out.println(documents.size()+" matches found!");
                 try {
-                    se.metricspace.riksdagen.HtmlRenderer.renderHtmlDivMode(year+".html", documents);
+                    HtmlRenderer.renderHtmlDivMode(year+".html", documents);
                 } catch(java.io.IOException exception) {
                     System.out.println("IOException processing documents: "+exception.getMessage());
                 }

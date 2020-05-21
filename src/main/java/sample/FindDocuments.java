@@ -60,7 +60,7 @@ public class FindDocuments {
             if(null!=documents && documents.size()>0) {
                 java.util.Collections.sort(documents);
                 System.out.println(documents.size()+" matches found!");
-                se.metricspace.riksdagen.HtmlRenderer.renderHtmlDivMode("rm201920.html", documents);
+                HtmlRenderer.renderHtmlDivMode("rm201920.html", documents);
             } else {
                 System.out.println("No matches found!");
             }

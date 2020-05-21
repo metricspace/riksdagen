@@ -23,7 +23,7 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package se.metricspace.riksdagen;
+package sample;
 
 /**
  * @author Mange
@@ -55,7 +55,7 @@ public class HtmlRenderer {
         thePrintStream.println("    <div class=\"content\">");
     }
 
-    public static void renderHtmlDivMode(String theFileName, java.util.List<Document> theDocuments) throws java.io.IOException {
+    public static void renderHtmlDivMode(String theFileName, java.util.List<se.metricspace.riksdagen.Document> theDocuments) throws java.io.IOException {
         java.io.FileOutputStream targetStream = null;
         java.io.PrintStream printStream = null;
         try {
@@ -78,7 +78,7 @@ public class HtmlRenderer {
         }
     }
 
-    public static void renderHtmlDivMode(java.io.PrintStream thePrintStream, java.util.List<Document> theDocuments) throws java.io.IOException {
+    public static void renderHtmlDivMode(java.io.PrintStream thePrintStream, java.util.List<se.metricspace.riksdagen.Document> theDocuments) throws java.io.IOException {
         printProlog(thePrintStream);
 
         thePrintStream.println("<div class=\"row\">");
@@ -86,7 +86,7 @@ public class HtmlRenderer {
         thePrintStream.println("<div class=\"col-md-2\"><strong>Benämning</strong></div>");
         thePrintStream.println("<div class=\"col-md-8\"><strong>Titel</strong></div>");
         thePrintStream.println("</div>");
-        for(Document document: theDocuments) {
+        for(se.metricspace.riksdagen.Document document: theDocuments) {
           String title = document.getTyp()+" "+document.getRiksMote()+":"+document.getBeteckning();
           String url = null;
           if (null!=document.getDokumentUrlHtml() && document.getDokumentUrlHtml().trim().length()>0) {
@@ -126,7 +126,7 @@ public class HtmlRenderer {
         printEpilog(thePrintStream);
     }
 
-    public static void renderHtmlVerboseMode(String theFileName, java.util.List<Document> theDocuments) throws java.io.IOException {
+    public static void renderHtmlVerboseMode(String theFileName, java.util.List<se.metricspace.riksdagen.Document> theDocuments) throws java.io.IOException {
         java.io.FileOutputStream targetStream = null;
         java.io.PrintStream printStream = null;
         try {
@@ -149,7 +149,7 @@ public class HtmlRenderer {
         }
     }
 
-    public static void renderHtmlVerboseMode(java.io.PrintStream thePrintStream, java.util.List<Document> theDocuments) throws java.io.IOException {
+    public static void renderHtmlVerboseMode(java.io.PrintStream thePrintStream, java.util.List<se.metricspace.riksdagen.Document> theDocuments) throws java.io.IOException {
         printProlog(thePrintStream);
         printEpilog(thePrintStream);
     }
