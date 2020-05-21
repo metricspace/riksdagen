@@ -83,7 +83,7 @@ public class Document implements Comparable<Document>{
     }
 
     public String getDatum() {
-        return itsDatum;
+        return (null!=itsDatum) ? itsDatum.substring(0, 10) : null;
     }
 
     String getDokumentId() {
@@ -326,6 +326,10 @@ public class Document implements Comparable<Document>{
                         case "url":
                             urlX = (null!=grandChild.getTextContent()) ? grandChild.getTextContent().trim() : null;
                             break;
+                        case "text":
+                            break;
+                        case "title":
+                            break;
                         case "#text":
                             break;
                         default:
@@ -399,7 +403,12 @@ public class Document implements Comparable<Document>{
         try {
             itsSystemDate = (null!=theValue && theValue.trim().length()>0) ? formatter.parse(theValue.trim()) : null;
         } catch (java.text.ParseException exception) {
-            System.out.println("ParseException getting systemdatum: "+exception.getMessage());
+            formatter = new java.text.SimpleDateFormat("yyyy-MM-dd");
+            try {
+                itsSystemDate = formatter.parse(theValue.trim());
+            } catch (java.text.ParseException ex) {
+                System.out.println("ParseException getting systemdatum: "+exception.getMessage());
+            }
         }
     }
 

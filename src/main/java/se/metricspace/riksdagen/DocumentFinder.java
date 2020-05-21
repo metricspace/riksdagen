@@ -101,6 +101,13 @@ public class DocumentFinder {
     }
 
     private static org.w3c.dom.Document loadDocument(String url) throws org.xml.sax.SAXException, java.io.IOException, javax.xml.parsers.ParserConfigurationException {
+        if(url.indexOf("22%")>-1) {
+            url = url.replaceAll("22%2c", "");
+            url = url.replaceAll("22%", "");
+        }
+        if(url.startsWith("http://data.riksda")) {
+            url = url.replaceAll("http://data.riksda", "https://data.riksda");
+        }
         javax.xml.parsers.DocumentBuilderFactory factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();
         factory.setNamespaceAware(true);
         return factory.newDocumentBuilder().parse(new java.net.URL(url).openStream());

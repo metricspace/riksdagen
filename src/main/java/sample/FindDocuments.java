@@ -30,7 +30,7 @@ package sample;
  */
 public class FindDocuments {
     public static void main(String[] theArgs) {
-        String FROMDATE="2019-09-01";
+        String FROMDATE="2020-01-01";
         String TOMDATE="2020-06-01";
         try {
             java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd");
