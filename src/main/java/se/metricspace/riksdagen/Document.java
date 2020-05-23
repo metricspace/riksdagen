@@ -86,12 +86,16 @@ public class Document implements Comparable<Document>{
         return (null!=itsDatum) ? itsDatum.substring(0, 10) : null;
     }
 
-    String getDokumentId() {
+    public String getDokumentId() {
         return itsDokumentId;
     }
 
     public String getDokumentUrlHtml() {
         return itsDokumentUrlHtml;
+    }
+
+    public String getDokumentTyp() {
+        return itsDokumentTyp;
     }
 
     public String getId() {
@@ -116,6 +120,10 @@ public class Document implements Comparable<Document>{
 
     public String getPdfUrl() {
         return itsPdfUrl;
+    }
+
+    public String getPublicerad() {
+        return itsPublicerad;
     }
 
     public String getRiksMote() {
