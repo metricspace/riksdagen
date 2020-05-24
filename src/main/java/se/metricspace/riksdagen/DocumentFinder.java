@@ -86,7 +86,7 @@ public class DocumentFinder {
                 for(int index=0;index<children.getLength();index++)   {
                     org.w3c.dom.Node child = children.item(index);
                     Document document = Document.parse(child);
-                    if(null!=document) {
+                    if(null!=document && !documents.contains(document)) {
                         documents.add(document);
                     }
                 }

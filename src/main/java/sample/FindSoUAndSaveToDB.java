@@ -43,7 +43,7 @@ public class FindSoUAndSaveToDB {
             // use better dbname/username/password/timezone here ...
             connection = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/riksdagen?useUnicode=true&serverTimezone=UTC", "someuser", "somepassword");
             java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd");
-            for(int year=1999; year < 2021; year++) {
+            for(int year=2020; year < 2021; year++) {
                 String FROMDATE=(year-1)+"-12-15";
                 String TOMDATE=(year+1)+"-01-15";
                 try {
